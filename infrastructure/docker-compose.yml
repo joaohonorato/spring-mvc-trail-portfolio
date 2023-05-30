@@ -1,0 +1,35 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: my-database
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+
+  sonarqube:
+    image: sonarqube
+    restart: always
+    ports:
+      - 9000:9000
+
+#  adminer:
+#    image: adminer
+#    restart: always
+#    ports:
+#      - 8081:8080
+#
+#  desafio-java:
+#    image: desafio-java
+#    build:
+#      context: ./..
+#      dockerfile: Dockerfile
+#    depends_on:
+#          - db
+#    ports:
+#      - 8080:8080

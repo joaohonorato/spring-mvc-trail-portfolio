@@ -1,0 +1,9 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 1
+      author: joaohonorato
+
+  - include:
+      file: 0001_create_tables.sql
+      relativeToChangelogFile: true

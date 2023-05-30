@@ -6,7 +6,9 @@ server:
       enabled: true
       force: true
     context-path: '/'
-
+  error:
+    whitelabel:
+      enabled: false
 spring:
   mvc:
     view:
@@ -27,8 +29,9 @@ spring:
         dialect: 'org.hibernate.dialect.PostgreSQLDialect'
     hibernate:
       ddl-auto: update
-    generate-ddl: true
-
+    generate-ddl: false
+    database: POSTGRESQL
+    show-sql: true
 
 logging:
   level:
@@ -39,7 +42,7 @@ logging:
           descriptor:
             sql:
               BasicBinder: TRACE
-
+    root: DEBUG
 
 management:
   endpoints:
